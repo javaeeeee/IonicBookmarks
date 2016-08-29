@@ -1,0 +1,1 @@
+An Ionic 2 Hybrid Mobile App to manipulate bookmarks using REST API as a backend.
