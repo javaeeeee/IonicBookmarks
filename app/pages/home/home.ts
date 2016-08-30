@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Bookmark} from '../../entities/Bookmark';
+import { BookmarkDetailPage } from '../bookmark-detail/bookmark-detail';
 
 const BOOKMARKS: Bookmark[] = [
   { id: 1, url: 'http://github.com', description: 'On-line Git repository' },
@@ -13,8 +14,13 @@ const BOOKMARKS: Bookmark[] = [
   { id: 5, url: 'http://stackowerflow.com', description: 'Ask questios when stuck' }
 ];
 
+/**
+ * A component serving as the main page and used to display the bookmark list along with navigation controls.
+ * @author Dmitry Noranovich
+ */
 @Component({
-  templateUrl: 'build/pages/home/home.html'
+  templateUrl: 'build/pages/home/home.html',
+  directives: [BookmarkDetailPage]
 })
 export class HomePage {
   selectedBookmark: Bookmark;

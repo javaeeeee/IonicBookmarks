@@ -15,17 +15,5 @@
       {{bm.description}}
     </ion-card-content>
   </ion-card>
-  <ion-list *ngIf="selectedBookmark">
-    <ion-list-header>
-      Bookmark Detail
-    </ion-list-header>
-    <ion-item>
-      <ion-label fixed>URL:</ion-label>
-      <ion-input type="text" [(ngModel)]="selectedBookmark.url"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label fixed>Description:</ion-label>
-      <ion-textarea [(ngModel)]="selectedBookmark.description"></ion-textarea>
-    </ion-item>
-  </ion-list>
+  <bookmark-detail [selectedBookmark]="selectedBookmark"></bookmark-detail>
 </ion-content>
