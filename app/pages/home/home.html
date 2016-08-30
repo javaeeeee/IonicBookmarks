@@ -1,14 +1,23 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic Bookmarks
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <ion-list-header>
+      Bookmark Detail
+    </ion-list-header>
+    <ion-item>
+      <ion-label fixed>URL:</ion-label>
+      <ion-input type="text" [(ngModel)]="bookmark.url"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Description:</ion-label>
+      <ion-textarea [(ngModel)]="bookmark.description"></ion-textarea>
+    </ion-item>
+  </ion-list>
 </ion-content>
