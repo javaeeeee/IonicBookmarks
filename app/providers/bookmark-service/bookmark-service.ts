@@ -21,10 +21,10 @@ export class BookmarkService {
 
   constructor(private http: Http) { }
   /**
-   * A method to 
+   * A method to produce lists of bookmarks.
    */
-  getBookmarks(): Bookmark[] {
-    return BOOKMARKS;
+  getBookmarks(): Promise<Bookmark[]> {
+    return Promise.resolve(BOOKMARKS);
   }
 }
 

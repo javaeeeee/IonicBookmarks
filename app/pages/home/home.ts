@@ -29,7 +29,9 @@ export class HomePage implements OnInit {
     this.getBookmarks();
   }
   private getBookmarks(): void {
-    this.bookmarks = this.bookmarkService.getBookmarks();
+    this.bookmarkService.getBookmarks()
+      .then(bookmarks => this.bookmarks = bookmarks)
+      .catch(err => console.log(err));
   }
   /**
    * Method to process a bookmark click in order to display bookmark info.
