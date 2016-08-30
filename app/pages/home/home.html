@@ -7,17 +7,25 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
+  <ion-card *ngFor="let bm of bookmarks" (click)="onSelect(bm)">
+    <ion-card-header>
+      {{bm.url}}
+    </ion-card-header>
+    <ion-card-content>
+      {{bm.description}}
+    </ion-card-content>
+  </ion-card>
+  <ion-list *ngIf="selectedBookmark">
     <ion-list-header>
       Bookmark Detail
     </ion-list-header>
     <ion-item>
       <ion-label fixed>URL:</ion-label>
-      <ion-input type="text" [(ngModel)]="bookmark.url"></ion-input>
+      <ion-input type="text" [(ngModel)]="selectedBookmark.url"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label fixed>Description:</ion-label>
-      <ion-textarea [(ngModel)]="bookmark.description"></ion-textarea>
+      <ion-textarea [(ngModel)]="selectedBookmark.description"></ion-textarea>
     </ion-item>
   </ion-list>
 </ion-content>
