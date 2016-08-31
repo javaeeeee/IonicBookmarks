@@ -1,19 +1,24 @@
 <ion-header>
   <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
-      Ionic Bookmarks
+      {{title}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card *ngFor="let bm of bookmarks" (click)="onSelect(bm)">
-    <ion-card-header>
-      {{bm.url}}
-    </ion-card-header>
-    <ion-card-content>
-      {{bm.description}}
-    </ion-card-content>
-  </ion-card>
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let bm of bookmarks" (click)="onSelect(bm)">
+      <ion-card-header>
+        {{bm.url}}
+      </ion-card-header>
+      <ion-card-content>
+        {{bm.description}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
   <bookmark-detail [selectedBookmark]="selectedBookmark"></bookmark-detail>
 </ion-content>

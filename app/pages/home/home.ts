@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import {Bookmark} from '../../entities/Bookmark';
 import { BookmarkDetailPage } from '../bookmark-detail/bookmark-detail';
@@ -15,10 +15,22 @@ import { BookmarkService } from '../../providers/bookmark-service/bookmark-servi
   providers: [BookmarkService]
 })
 export class HomePage implements OnInit {
+  /**
+   * The selected bookmark for which detail are to be shown.
+   */
   selectedBookmark: Bookmark;
+  /**
+   * The list of bookmarks to be dispalyed.
+   */
   bookmarks: Bookmark[];
-  constructor(public navCtrl: NavController, private bookmarkService: BookmarkService) {
-
+  /**
+   * The title of the page.
+   */
+  title: string;
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private bookmarkService: BookmarkService) {
+    this.title = navParams.get('title');
   }
   /**
    * Method provides initialization of the bookmark list. 
